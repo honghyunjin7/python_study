@@ -4,18 +4,14 @@ split함수를 쓰는 이유는 input함수가 한 줄 통째로 문자열로 �
 map함수를 쓰는 이유는 분리된 각각의 문자열들을 원하는 타입으로 바꿔주기 위한 역할이다.
 
 a, b = map(int, input().split())
-
 print(f'a = {a}')
 print(f'b = {b}')
 
 a, b = map(int, input().split())
-
 print(f'{a} + {b} = {a+b}')
 
 str, n = input().split()
-
 print(str*int(n))
 
 str1, str2 = input().split()
-
 print(str1+str2)
