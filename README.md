@@ -28,6 +28,7 @@ for k in range(1, N+1):
     print(k*"*")
 
 -Operator-
+
 #6
 a, b = map(int, input().split())
 
