@@ -11,3 +11,7 @@ print(f'b = {b}')
 a, b = map(int, input().split())
 
 print(f'{a} + {b} = {a+b}')
+
+str, n = input().split()
+
+print(str*int(n))
