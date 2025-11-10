@@ -7,3 +7,7 @@ a, b = map(int, input().split())
 
 print(f'a = {a}')
 print(f'b = {b}')
+
+a, b = map(int, input().split())
+
+print(f'{a} + {b} = {a+b}')
