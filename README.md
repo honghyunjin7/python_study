@@ -15,3 +15,7 @@ print(f'{a} + {b} = {a+b}')
 str, n = input().split()
 
 print(str*int(n))
+
+str1, str2 = input().split()
+
+print(str1+str2)
