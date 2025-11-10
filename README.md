@@ -42,4 +42,9 @@ ef solution(num1, num2):
     answer = num1//num2
     return answer
 
+#8
+def solution(n_str):
+    return int(n_str)
+    
+
 
