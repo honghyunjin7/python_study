@@ -37,4 +37,9 @@ print(a*b)
 print(a//b)
 print(a%b)
 
+#7
+ef solution(num1, num2):
+    answer = num1//num2
+    return answer
+
 
