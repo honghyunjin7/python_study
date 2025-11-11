@@ -1,4 +1,4 @@
-# python_study
+# Python_Study
 Input-Output
 
 split함수를 쓰는 이유는 input함수가 한 줄 통째로 문자열로 받아들이기 때문에 공백을 기준으로 리스트를 만들어 문자열을 쪼개주는 역할이 필요하기 때문이다.
@@ -91,6 +91,21 @@ def solution(num1, num2):
 
     elif num1 != num2:
         return  -1
+
+#13
+def solution(angle):
+    if (0 < angle < 90):
+        return 1
+
+    elif(angle == 90):
+        return 2
+
+    elif (90 < angle < 180):
+        return 3
+
+    elif (angle == 180):
+        return 4
+
 
     
 
