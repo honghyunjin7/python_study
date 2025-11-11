@@ -52,6 +52,14 @@ def solution(n, k):
     result = 12000 * n + 2000 * k - n // 10 * 2000
 
     return result
+
+#10
+def solution(slice, n):
+    if n%slice == 0:
+        return n//slice
+    else:
+        return n//slice + 1
+    
     
 
 
