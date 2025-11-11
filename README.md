@@ -59,6 +59,20 @@ def solution(slice, n):
         return n//slice
     else:
         return n//slice + 1
+
+#11
+a, b = map(int, input().split())
+
+a_x = (a-1) % 4
+a_y = (a-1) // 4
+
+b_x = (b-1) % 4
+b_y = (b-1) // 4
+
+distance = abs((a_x - b_x)) + abs((a_y - b_y))
+
+print(distance)
+
     
     
 
