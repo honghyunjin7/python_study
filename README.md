@@ -46,6 +46,12 @@ ef solution(num1, num2):
 #8
 def solution(n_str):
     return int(n_str)
+
+#9
+def solution(n, k):
+    result = 12000 * n + 2000 * k - n // 10 * 2000
+
+    return result
     
 
 
