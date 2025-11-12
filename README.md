@@ -106,6 +106,26 @@ def solution(angle):
     elif (angle == 180):
         return 4
 
+#14
+x, y, z = map(int, input().split())
+gold = 0
+
+if (x == y and y == z and x == z):
+    gold = 10000 + x * 1000
+
+elif (x == y or x == z):
+    gold = 1000 + x * 100
+
+elif (y == z):
+    gold = 1000 + y * 100
+    
+elif (x != y and y != z and x != z):
+    gold = max(x, y, z) * 100
+
+print(gold)
+    
+
+
 
     
 
