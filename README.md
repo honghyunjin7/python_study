@@ -123,6 +123,54 @@ elif (x != y and y != z and x != z):
     gold = max(x, y, z) * 100
 
 print(gold)
+
+#15
+# 1은 2cm, 2는 3cm, 0은 4cm를 차지
+# 각 숫자 사이에 여백이 1cm 씩 2개
+# 오른쪽, 왼쪽 경계에서 각각 여백이 1cm씩 차지
+# 134
+N = int(input())
+
+while N != 0:
+    
+    space = 0
+    S = str(N) #정수는 각 자릿수로 쪼갤 수 없기때문에 str함수 사용
+
+    space = 2 + (len(S) - 1) # (양쪽 여백 2cm) + (숫자 사이 여백)
+    
+    for digit in S:
+        if digit == '1':
+            space = space + 2
+
+        elif digit == '0':
+            space = space + 4
+
+        else:  # 2~9 
+            space = space + 3
+
+    print(space)
+
+    N = int(input())
+
+    
+
+
+
+    
+
+    
+
+        
+
+    
+
+
+    
+        
+    
+
+    
+
     
 
 
