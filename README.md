@@ -128,6 +128,7 @@ print(gold)
 # 1은 2cm, 2는 3cm, 0은 4cm를 차지
 # 각 숫자 사이에 여백이 1cm 씩 2개
 # 오른쪽, 왼쪽 경계에서 각각 여백이 1cm씩 차지
+
 N = int(input())
 
 while N != 0:
