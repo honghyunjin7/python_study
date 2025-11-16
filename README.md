@@ -152,6 +152,25 @@ while N != 0:
     print(space)
 
     N = int(input())
+    
+#16
+
+N, Kim, Lim = map(int, input().split())
+round = 0
+
+
+while Kim != Lim:
+    round = round + 1
+    new_kim = (Kim + 1) // 2
+    new_Lim = (Lim + 1) // 2
+
+    Kim = new_kim
+    Lim = new_Lim
+
+print(round)
+    
+        
+    
 
     
 
