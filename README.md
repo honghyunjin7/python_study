@@ -190,7 +190,9 @@ while True:
     height = height + 1
 
 print(height)
-    
+
+=Arrays-
+
 #18
 
 def solution(num_list):
