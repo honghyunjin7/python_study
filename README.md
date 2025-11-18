@@ -203,6 +203,14 @@ def solution(num_list):
             answer[1] += 1
 
     return answer
+
+#19
+
+def solution(cipher, code):
+    answer = cipher[code-1::code]
+
+    return answer
+    
     
 
 
