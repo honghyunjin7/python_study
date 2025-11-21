@@ -192,7 +192,7 @@ while True:
 print(height)
 
 =Arrays-
-
+파이썬에서의 배열은 list
 #18
 
 def solution(num_list):
