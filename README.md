@@ -227,6 +227,15 @@ def solution(n):
     return answer
                 
 #21
+def solution(array, height):
+    tall_person = 0
+    
+    for i in array:
+        if i > height:
+            tall_person += 1
+
+    return tall_person
+            
     
 
 #22
