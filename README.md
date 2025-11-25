@@ -240,7 +240,18 @@ def solution(array, height):
 
 #22
 
-
+def solution(numbers, k):
+    # 1. k번째 순서가 되려면, (k-1)번 만큼 이동해야 합니다.
+    #    (첫 번째 사람은 이미 공을 갖고 시작하니까 0번 이동)
+    # 2. 한 번 이동할 때마다 오른쪽으로 2칸씩(한 명 건너뛰기) 갑니다.
+    index = (k - 1) * 2
+    
+    # 3. 계산된 위치가 사람 수(배열 길이)를 넘어가면 
+    #    다시 앞쪽으로 돌아오게 나머지(%)를 구합니다.
+    target_index = index % len(numbers)
+    
+    # 4. 그 위치에 있는 사람 번호를 반환합니다.
+    return numbers[target_index]
 
     
 
