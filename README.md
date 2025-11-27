@@ -253,6 +253,26 @@ def solution(numbers, k):
     # 4. 그 위치에 있는 사람 번호를 반환합니다.
     return numbers[target_index]
 
+#23
+
+paper = [[0 for k in range(101)] for k in range(101)]
+
+paper_amount = int(input())
+
+for k in range(paper_amount):
+    x, y = map(int, input().split())
+
+    for i in range(x, x + 10):
+        for j in range(y, y + 10):
+            paper[i][j] = 1
+
+total_area = 0
+for row in paper:
+    total_area += row.count(1)
+
+print(total_area)
+
+
     
 
     
