@@ -272,6 +272,25 @@ for row in paper:
 
 print(total_area)
 
+#24
+
+def get_distance(x1, y1, x2, y2):
+    squared_value = ((x2 - x1) ** 2) + ((y2- y1) ** 2)
+    distance = squared_value ** 0.5
+
+    return distance
+
+x1, y1, x2, y2 = map(int, input().split())
+
+result = get_distance(x1, y1, x2, y2)
+
+if result.is_integer():
+    print(int(result))
+
+else:
+    print(result)
+
+
 
     
 
