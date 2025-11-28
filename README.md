@@ -301,6 +301,21 @@ def factorial(N):
 N = int(input())
 print(factorial(N))
 
+#27
+
+def func(n):
+
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    return func(n-1) + func(n-2)
+
+n = int(input())
+
+print(func(n))
+
 
 
     
