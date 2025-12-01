@@ -332,7 +332,21 @@ nums.sort()
 
 for num in nums:
   print(num)
-    
+
+#41
+
+n = int(input())
+words = []
+for i in range(n):
+    words.append(input())
+
+words_set = set(words)
+words = list(words_set)
+words.sort() #알파벳 순으로 정렬
+words.sort(key=len) # 길이 순으로 정렬
+
+for word in words:
+    print(word)
 
         
 
