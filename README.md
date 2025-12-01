@@ -319,7 +319,19 @@ n = int(input())
 print(func(n))
 
 
+#40 
+sort()함수로 숫자 정렬하면 간단하다
 
+n = int(input())
+nums = []
+
+for k in range(n):
+  nums.append(int(input()))
+  
+nums.sort()
+
+for num in nums:
+  print(num)
     
 
         
