@@ -375,6 +375,19 @@ for char in str_input:
 
 print(result)
 
+#31
+
+str(): "야, 너 옷만 문자로 갈아입어." (내용물은 그대로)
+
+chr(): "야, 이 번호표 들고 가서 해당되는 글자 찾아와." (내용물이 바뀜)
+
+def solution(age):
+    answer = ''
+    
+    for digit in str(age):  # digit이 "23"이 아니라, "2"와 "3"이 차례대로 들어와요.
+        answer += chr(int(digit) + 97)
+    return answe r
+
   
 
 #40 
