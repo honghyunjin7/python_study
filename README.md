@@ -411,7 +411,11 @@ def solution(letter):
 
     return answer
 
+#33
 
+def solution(my_string):
+    
+    return my_string[: : -1]
   
 
 
