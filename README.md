@@ -318,6 +318,25 @@ n = int(input())
 
 print(func(n))
 
+#28
+
+def d(n):
+  next_num = n + sum(map(int, str(n)))
+  return next_num
+  
+generated_nums = set()
+  # set()을 변수에 대입하면 **"여러 개를 담을 수 있는 변수"**가 되는 건 맞지만, **리스트(List)**가 된 건 아니에요.
+  # set()는 중복된 값은 제거한다
+
+for i in range(1, 10001):
+  generated_nums.add(d(i))
+    
+  
+for i in range(1, 10001):
+    if i not in generated_nums:
+        print(i)
+    
+  
 
 #40 
 sort()함수로 숫자 정렬하면 간단하다
