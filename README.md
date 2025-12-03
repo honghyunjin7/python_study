@@ -427,7 +427,20 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 for i in alphabet:
     print(S.find(i), end=' ')
     
+#35
+
+def solution(n, arr1, arr2):
+    answer = []
     
+    for i in range(n):
+        bin_str = bin(arr1[i] | arr2[i])[2:]
+        
+        zero_pad = (n - len(bin_str)) * '0'
+        bin_str = zero_pad + bin_str
+        
+        answer.append(bin_str.replace('1', '#').replace('0', ' '))
+        
+    return answer
     
     
    
