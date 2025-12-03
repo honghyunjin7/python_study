@@ -416,7 +416,20 @@ def solution(letter):
 def solution(my_string):
     
     return my_string[: : -1]
-  
+
+#34
+
+S = input()
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+for i in alphabet:
+    print(S.find(i), end=' ')
+    
+    
+    
+    
+   
+
 
 
 
