@@ -77,6 +77,7 @@ distance = abs((a_x - b_x)) + abs((a_y - b_y))
 print(distance)
 
 -Control+Statements-
+
 else는 100% 선택 사항이라 안 써도 아무 문제 없다.
 else는 "위의 if나 elif 조건에 하나도 해당하지 않는 모든 나머지 경우"를 의미할 때만 쓰는 것
 
