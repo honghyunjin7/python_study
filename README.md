@@ -452,6 +452,24 @@ words.sort(key=len) # 길이 순으로 정렬
 for word in words:
     print(word)
 
+#42
+
+n, m = map(int, input().split())
+num_lst = list(map(int, input().split()))
+
+nlst = []
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1, n):
+            total = num_lst[i] + num_lst[j] + num_lst[k]
+            if total > m:
+                continue
+            else:
+                nlst.append(total)
+                
+print(max(nlst))
+
+
         
 
     
