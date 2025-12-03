@@ -442,6 +442,26 @@ def solution(n, arr1, arr2):
         
     return answer
     
+<Aigorithm>
+
+#36
+
+nums = [13, 2, 8, 22, 3, 1, 18, 15, 12, 5, 10, 19, 6, 16, 7, 20]
+
+x = int(input())
+i = 0
+n = len(nums)
+
+while i <= n-1:
+    if x == nums[i]:
+        break
+    i += 1
+    
+if i <= n-1:
+    print(f'데이터 위치: {i}')
+    
+else:
+    print(-1)
     
    
 
