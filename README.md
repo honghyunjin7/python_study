@@ -498,12 +498,60 @@ answers = [1, 2, 3, 4, 5]
 # 수정된 변수명으로 함수 호출
 print(solution(answers))
 
+#38
 
+x = int(input())
 
+nums = [1,2,3,5,6,7,8,10,12,13,15,16,18,19,20,22]
+low = 0
+high = len(nums) - 1
+tries = 0
 
+while low <= high:
+    tries += 1
+    mid = int((low + high) / 2)
+    
+    if nums[mid] == x:
+        break
+    
+    if x > nums[mid]:
+        low = mid + 1      
+    else:
+        high = mid - 1     
 
+print(tries)
 
+#39
 
+n = int(input()) # 탐색 대상의 크기
+nums_a = list(map(int, input().split())) # 탐색 대상 리스트
+m = int(input()) # 찾고자 하는 데이터 개수
+nums_x = list(map(int, input().split())) # 찾고자 하는 데이터 리스트
+
+nums_a.sort() # 오름차순 정렬
+
+for i in range(m): # 정수 x 탐색
+    low = 0
+    high = n - 1 # 인덱스 값
+    isExist = False
+
+    while low <= high:
+        mid = int((low + high) / 2)
+
+        if nums_x[i] == nums_a[mid]: # [수정] nuums_x -> nums_x 로 고쳤습니다!
+            isExist = True
+            print(1)
+            break # while문을 빠져나옴
+
+        elif nums_x[i] > nums_a[mid]: # 탐색 범위 수정
+            low = mid + 1
+
+        else: # 탐색 범위 수정 (x가 mid보다 작을떄)
+            high = mid - 1
+
+    if isExist == False: # x가 탐색 리스트에 없는 경우 
+        print(0)
+        
 #40 
 sort()함수로 숫자 정렬하면 간단하다
 
