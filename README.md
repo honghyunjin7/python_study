@@ -463,7 +463,40 @@ if i <= n-1:
 else:
     print(-1)
     
-   
+#37
+
+def solution(answers):
+    # 각 수포자의 찍는 패턴 정의
+    pattern_one = [1, 2, 3, 4, 5]
+    len_one = len(pattern_one)
+    pattern_two = [2, 1, 2, 3, 2, 4, 2, 5]
+    len_two = len(pattern_two)
+    pattern_three = [3,3,1,1,2,2,4,4,5,5]
+    len_three = len(pattern_three)
+    hits = [0, 0, 0] # 수포자가 맞힌 문항 수
+
+    for i in range(len(answers)):
+        answer = answers[i] # i번쨰 문제 정답
+        if answer == pattern_one[i % len_one]:
+            hits[0] += 1
+        if answer == pattern_two[i % len_two]:
+            hits[1] += 1
+        if answer == pattern_three[i % len_three]:
+            hits[2] += 1
+
+    result = [] # 가장 많은 문제를 맞힌 수포자의 번호 (1, 2, 3)
+
+    for i in range(len(hits)):
+        if hits[i] == max(hits): # 가장 많은 문제를 맞힌 수포자인지?
+            result.append(i+1)
+            
+    return result
+
+# 변수명 통일 (answer -> answers)
+answers = [1, 2, 3, 4, 5] 
+
+# 수정된 변수명으로 함수 호출
+print(solution(answers))
 
 
 
