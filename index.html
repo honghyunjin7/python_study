@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Study</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Python_Study</h1>
+    <p>&lt;왜 이게 이렇게 코드가 동작하는지 고민하고 이해하는데 시간 투자하기&gt;</p>
+
+    <h2>Input-Output</h2>
+    <p>end=" "를 쓰는 이유는 문제의 출력 예시가 1 4 2 3처럼 한 줄에 공백으로 구분되어 나오게 하기 위함이다.</p>
+    <p>split함수를 쓰는 이유는 input함수가 한 줄 통째로 문자열로 받아들이기 때문에 공백을 기준으로 리스트를 만들어 문자열을 쪼개주는 역할이 필요하기 때문이다.</p>
+    <p>map함수를 쓰는 이유는 분리된 각각의 문자열들을 원하는 타입으로 바꿔주기 위한 역할이다.</p>
+
+    <h3>#1</h3>
+    <pre><code>a, b = map(int, input().split())
+print(f'a = {a}')
+print(f'b = {b}')</code></pre>
+
+    <h3>#2</h3>
+    <pre><code>a, b = map(int, input().split())
+print(f'{a} + {b} = {a+b}')</code></pre>
+
+    <h3>#3</h3>
+    <pre><code>str, n = input().split()
+print(str*int(n))</code></pre>
+
+    <h3>#4</h3>
+    <pre><code>str1, str2 = input().split()
+print(str1+str2)</code></pre>
+
+    <h3>#5</h3>
+    <pre><code>N = int(input())
+for k in range(1, N+1):
+    print(k*"*")</code></pre>
+
+    <h2>-Operator-</h2>
+    <h3>#6</h3>
+    <pre><code>a, b = map(int, input().split())
+
+print(a+b)
+print(a-b)
+print(a*b)
+print(a//b)
+print(a%b)</code></pre>
+
+    <h3>#7</h3>
+    <pre><code>def solution(num1, num2):
+    answer = num1//num2
+    return answer</code></pre>
+
+    <h3>#8</h3>
+    <pre><code>def solution(n_str):
+    return int(n_str)</code></pre>
+
+    <h3>#9</h3>
+    <pre><code>def solution(n, k):
+    result = 12000 * n + 2000 * k - n // 10 * 2000
+
+    return result</code></pre>
+
+    <h3>#10</h3>
+    <pre><code>def solution(slice, n):
+    if n%slice == 0:
+        return n//slice
+    else:
+        return n//slice + 1</code></pre>
+
+    <h3>#11</h3>
+    <pre><code>a, b = map(int, input().split())
+
+a_x = (a-1) % 4
+a_y = (a-1) // 4
+
+b_x = (b-1) % 4
+b_y = (b-1) // 4
+
+distance = abs((a_x - b_x)) + abs((a_y - b_y))
+
+print(distance)</code></pre>
+
+    <h2>-Control+Statements-</h2>
+    <p>else는 100% 선택 사항이라 안 써도 아무 문제 없다.</p>
+    <p>else는 "위의 if나 elif 조건에 하나도 해당하지 않는 모든 나머지 경우"를 의미할 때만 쓰는 것</p>
+
+    <h3>#12</h3>
+    <pre><code>def solution(num1, num2):
+    if num1 == num2:
+        return 1
+    else:  # '같지 않은 나머지 모든 경우'라는 뜻
+        return -1
+
+def solution(num1, num2):
+
+    if num1 == num2:
+        return 1
+
+    elif num1 != num2:
+        return  -1</code></pre>
+
+    <h3>#13</h3>
+    <pre><code>def solution(angle):
+    if (0 < angle < 90):
+        return 1
+
+    elif(angle == 90):
+        return 2
+
+    elif (90 < angle < 180):
+        return 3
+
+    elif (angle == 180):
+        return 4</code></pre>
+
+    <h3>#14</h3>
+    <pre><code>x, y, z = map(int, input().split())
+gold = 0
+
+if (x == y and y == z and x == z):
+    gold = 10000 + x * 1000
+
+elif (x == y or x == z):
+    gold = 1000 + x * 100
+
+elif (y == z):
+    gold = 1000 + y * 100
+    
+elif (x != y and y != z and x != z):
+    gold = max(x, y, z) * 100
+
+print(gold)</code></pre>
+
+    <h3>#15</h3>
+    <p>1은 2cm, 2는 3cm, 0은 4cm를 차지</p>
+    <p>각 숫자 사이에 여백이 1cm 씩 2개</p>
+    <p>오른쪽, 왼쪽 경계에서 각각 여백이 1cm씩 차지</p>
+    <pre><code>N = int(input())
+
+while N != 0:
+    
+    space = 0
+    S = str(N) #정수는 각 자릿수로 쪼갤 수 없기때문에 str함수 사용
+
+    space = 2 + (len(S) - 1) # (양쪽 여백 2cm) + (숫자 사이 여백)
+    
+    for digit in S:
+        if digit == '1':
+            space = space + 2
+
+        elif digit == '0':
+            space = space + 4
+
+        else:  # 2~9 
+            space = space + 3
+
+    print(space)
+
+    N = int(input())</code></pre>
+    
+    <h3>#16</h3>
+    <pre><code>N, Kim, Lim = map(int, input().split())
+round = 0
+
+
+while Kim != Lim:
+    round = round + 1
+    new_kim = (Kim + 1) // 2
+    new_Lim = (Lim + 1) // 2
+
+    Kim = new_kim
+    Lim = new_Lim
+
+print(round)</code></pre>
+
+    <h3>#17</h3>
+    <pre><code>blocks = int(input())
+
+height = 1
+total_blocks = 1
+added_last_layer = 1  # A(1) = 1
+
+while True:
+    # A(h) 점화식 = A(h-1) + 4 * (h-1)
+    # A(height + 1) = A(height) + 4 * height
+    added_this_layer = added_last_layer + 4 * height
+    
+    if total_blocks + added_this_layer > blocks:
+        break
+
+    total_blocks = total_blocks + added_this_layer
+    added_last_layer = added_this_layer  # 다음 루프를 위해 현재 층의 블록 수 저장
+    height = height + 1
+
+print(height)</code></pre>
+
+    <h2>=Arrays-</h2>
+    <p>파이썬에서의 배열은 list</p>
+    <h3>#18</h3>
+    <pre><code>def solution(num_list):
+    answer = [0, 0]
+
+    for num in num_list:
+        if num % 2 == 0:
+            answer[0] += 1
+        else:
+            answer[1] += 1
+
+    return answer</code></pre>
+
+    <h3>#19</h3>
+    <pre><code>def solution(cipher, code):
+    answer = cipher[code-1::code]
+
+    return answer</code></pre>
+    
+    <h3>#20</h3>
+    <pre><code>def solution(n):
+    answer = []
+
+    for i in range(1, n+1):
+
+        if n % i == 0:
+            answer.append(i)
+
+    return answer</code></pre>
+                
+    <h3>#21</h3>
+    <pre><code>def solution(array, height):
+    tall_person = 0
+    
+    for i in array:
+        if i > height:
+            tall_person += 1
+
+    return tall_person</code></pre>
+    
+    <h3>#22</h3>
+    <pre><code>def solution(numbers, k):
+    # 1. k번째 순서가 되려면, (k-1)번 만큼 이동해야 합니다.
+    #    (첫 번째 사람은 이미 공을 갖고 시작하니까 0번 이동)
+    # 2. 한 번 이동할 때마다 오른쪽으로 2칸씩(한 명 건너뛰기) 갑니다.
+    index = (k - 1) * 2
+    
+    # 3. 계산된 위치가 사람 수(배열 길이)를 넘어가면 
+    #    다시 앞쪽으로 돌아오게 나머지(%)를 구합니다.
+    target_index = index % len(numbers)
+    
+    # 4. 그 위치에 있는 사람 번호를 반환합니다.
+    return numbers[target_index]</code></pre>
+
+    <h3>#23</h3>
+    <pre><code>paper = [[0 for k in range(101)] for k in range(101)]
+
+paper_amount = int(input())
+
+for k in range(paper_amount):
+    x, y = map(int, input().split())
+
+    for i in range(x, x + 10):
+        for j in range(y, y + 10):
+            paper[i][j] = 1
+
+total_area = 0
+for row in paper:
+    total_area += row.count(1)
+
+print(total_area)</code></pre>
+
+    <h3>#24</h3>
+    <pre><code>def get_distance(x1, y1, x2, y2):
+    squared_value = ((x2 - x1) ** 2) + ((y2- y1) ** 2)
+    distance = squared_value ** 0.5
+
+    return distance
+
+x1, y1, x2, y2 = map(int, input().split())
+
+result = get_distance(x1, y1, x2, y2)
+
+if result.is_integer():
+    print(int(result))
+
+else:
+    print(result)</code></pre>
+
+    <h3>#26</h3>
+    <pre><code>def factorial(N):
+    if N == 0:
+        return 1
+    
+    return N * factorial(N-1)
+
+N = int(input())
+print(factorial(N))</code></pre>
+
+    <h3>#27</h3>
+    <pre><code>def func(n):
+
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    return func(n-1) + func(n-2)
+
+n = int(input())
+
+print(func(n))</code></pre>
+
+    <h3>#28</h3>
+    <pre><code>def d(n):
+  next_num = n + sum(map(int, str(n)))
+  return next_num
+  
+generated_nums = set()
+   set()을 변수에 대입하면 **"여러 개를 담을 수 있는 변수"**가 되는 건 맞지만, **리스트(List)**가 된 건 아니에요.
+   set()는 중복된 값은 제거한다
+
+for i in range(1, 10001):
+  generated_nums.add(d(i))
+    
+  
+for i in range(1, 10001):
+    if i not in generated_nums:
+        print(i)</code></pre>
+
+    <h3>#29</h3>
+    <pre><code>N = int(input())
+
+def chat(k):
+  under_bar = "____" * k
+  
+  print(under_bar + '"재귀함수가 뭔가요?"')
+  
+  if k == N:
+    print(under_bar + '"재귀함수는 자기 자신을 호출하는 함수라네"')
+    print(under_bar + "라고 답변하였지.")
+    return
+  
+  print(under_bar + '"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.')
+  print(under_bar + '마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.')
+  print(under_bar + '그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어."') 
+  
+  chat(k + 1)
+  
+  print(under_bar + "라고 답변하였지.")
+  
+# --- 프로그램 시작 ---  
+print("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.")
+chat(0)</code></pre>
+
+    <h2>&lt;String&gt;</h2>
+
+    <h3>#30</h3>
+    <pre><code>str_input = input()
+result = ""
+
+for char in str_input:
+    if char.isupper():
+        result += char.lower()
+    else:
+        result += char.upper()
+
+print(result)</code></pre>
+
+    <h3>#31</h3>
+    <p>str(): "야, 너 옷만 문자로 갈아입어." (내용물은 그대로)</p>
+    <p>chr(): "야, 이 번호표 들고 가서 해당되는 글자 찾아와." (내용물이 바뀜)</p>
+    <pre><code>def solution(age):
+    answer = ''
+    
+    for digit in str(age):  # digit이 "23"이 아니라, "2"와 "3"이 차례대로 들어와요.
+        answer += chr(int(digit) + 97)
+    return answer</code></pre>
+
+    <h3>#32</h3>
+    <p>리스트와 딕셔너리는 차이가 있다.</p>
+    <p>리스트 []: "몇 번째야?" (숫자가 필요함)</p>
+    <p>딕셔너리 {}: "이름이 뭐야?" (숫자 대신 이름표가 필요함)</p>
+    <pre><code>morse = { 
+    '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
+    '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
+    '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
+    '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
+    '-.--':'y','--..':'z'
+}
+
+def solution(letter):
+    answer = ''
+    morse_list = letter.split(' ')
+
+    for sign in morse_list:
+        answer += morse[sign]
+
+    return answer</code></pre>
+
+    <h3>#33</h3>
+    <pre><code>def solution(my_string):
+    
+    return my_string[: : -1]</code></pre>
+
+    <h3>#34</h3>
+    <pre><code>S = input()
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+for i in alphabet:
+    print(S.find(i), end=' ')</code></pre>
+    
+    <h3>#35</h3>
+    <pre><code>def solution(n, arr1, arr2):
+    answer = []
+    
+    for i in range(n):
+        bin_str = bin(arr1[i] | arr2[i])[2:]
+        
+        zero_pad = (n - len(bin_str)) * '0'
+        bin_str = zero_pad + bin_str
+        
+        answer.append(bin_str.replace('1', '#').replace('0', ' '))
+        
+    return answer</code></pre>
+    
+    <h2>&lt;Aigorithm&gt;</h2>
+
+    <h3>#36</h3>
+    <pre><code>nums = [13, 2, 8, 22, 3, 1, 18, 15, 12, 5, 10, 19, 6, 16, 7, 20]
+
+x = int(input())
+i = 0
+n = len(nums)
+
+while i <= n-1:
+    if x == nums[i]:
+        break
+    i += 1
+    
+if i <= n-1:
+    print(f'데이터 위치: {i}')
+    
+else:
+    print(-1)</code></pre>
+    
+    <h3>#37</h3>
+    <pre><code>def solution(answers):
+    # 각 수포자의 찍는 패턴 정의
+    pattern_one = [1, 2, 3, 4, 5]
+    len_one = len(pattern_one)
+    pattern_two = [2, 1, 2, 3, 2, 4, 2, 5]
+    len_two = len(pattern_two)
+    pattern_three = [3,3,1,1,2,2,4,4,5,5]
+    len_three = len(pattern_three)
+    hits = [0, 0, 0] # 수포자가 맞힌 문항 수
+
+    for i in range(len(answers)):
+        answer = answers[i] # i번쨰 문제 정답
+        if answer == pattern_one[i % len_one]:
+            hits[0] += 1
+        if answer == pattern_two[i % len_two]:
+            hits[1] += 1
+        if answer == pattern_three[i % len_three]:
+            hits[2] += 1
+
+    result = [] # 가장 많은 문제를 맞힌 수포자의 번호 (1, 2, 3)
+
+    for i in range(len(hits)):
+        if hits[i] == max(hits): # 가장 많은 문제를 맞힌 수포자인지?
+            result.append(i+1)
+            
+    return result
+
+# 변수명 통일 (answer -> answers)
+answers = [1, 2, 3, 4, 5] 
+
+# 수정된 변수명으로 함수 호출
+print(solution(answers))</code></pre>
+
+    <h3>#38</h3>
+    <pre><code>x = int(input())
+
+nums = [1,2,3,5,6,7,8,10,12,13,15,16,18,19,20,22]
+low = 0
+high = len(nums) - 1
+tries = 0
+
+while low <= high:
+    tries += 1
+    mid = int((low + high) / 2)
+    
+    if nums[mid] == x:
+        break
+    
+    if x > nums[mid]:
+        low = mid + 1      
+    else:
+        high = mid - 1     
+
+print(tries)</code></pre>
+
+    <h3>#39</h3>
+    <pre><code>n = int(input()) # 탐색 대상의 크기
+nums_a = list(map(int, input().split())) # 탐색 대상 리스트
+m = int(input()) # 찾고자 하는 데이터 개수
+nums_x = list(map(int, input().split())) # 찾고자 하는 데이터 리스트
+
+nums_a.sort() # 오름차순 정렬
+
+for i in range(m): # 정수 x 탐색
+    low = 0
+    high = n - 1 # 인덱스 값
+    isExist = False
+
+    while low <= high:
+        mid = int((low + high) / 2)
+
+        if nums_x[i] == nums_a[mid]: # [수정] nuums_x -> nums_x 로 고쳤습니다!
+            isExist = True
+            print(1)
+            break # while문을 빠져나옴
+
+        elif nums_x[i] > nums_a[mid]: # 탐색 범위 수정
+            low = mid + 1
+
+        else: # 탐색 범위 수정 (x가 mid보다 작을떄)
+            high = mid - 1
+
+    if isExist == False: # x가 탐색 리스트에 없는 경우 
+        print(0)</code></pre>
+        
+    <h3>#40</h3>
+    <p>sort()함수로 숫자 정렬하면 간단하다</p>
+    <pre><code>n = int(input())
+nums = []
+
+for k in range(n):
+  nums.append(int(input()))
+  
+nums.sort()
+
+for num in nums:
+  print(num)</code></pre>
+
+    <h3>#41</h3>
+    <pre><code>n = int(input())
+words = []
+for i in range(n):
+    words.append(input())
+
+words_set = set(words)
+words = list(words_set)
+words.sort() #알파벳 순으로 정렬
+words.sort(key=len) # 길이 순으로 정렬
+
+for word in words:
+    print(word)</code></pre>
+
+    <h3>#42</h3>
+    <pre><code>n, m = map(int, input().split())
+num_lst = list(map(int, input().split()))
+
+nlst = []
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1, n):
+            total = num_lst[i] + num_lst[j] + num_lst[k]
+            if total > m:
+                continue
+            else:
+                nlst.append(total)
+                
+print(max(nlst))</code></pre>
+</body>
+</html>
