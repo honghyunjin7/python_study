@@ -1,6 +1,6 @@
 # Python_Study
 # <왜 이게 이렇게 코드가 동작하는지 고민하고 이해하는데 시간 투자하기>
-Input-Output
+-Input-Output-
 
 end=" "를 쓰는 이유는 문제의 출력 예시가 1 4 2 3처럼 한 줄에 공백으로 구분되어 나오게 하기 위함이다.
 
@@ -195,7 +195,7 @@ while True:
 
 print(height)
 
-=Arrays-
+-Arrays-
 파이썬에서의 배열은 list
 #18
 
@@ -363,7 +363,7 @@ def chat(k):
 print("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.")
 chat(0)
 
-<String>
+-String-
 
 #30
 
@@ -443,7 +443,7 @@ def solution(n, arr1, arr2):
         
     return answer
     
-<Aigorithm>
+-Aigorithm-
 
 #36
 
