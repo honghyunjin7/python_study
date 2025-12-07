@@ -65,15 +65,22 @@ def solution(slice, n):
         return n//slice + 1
 
 #11
-a, b = map(int, input().split())
+# 두 수 입력 받기
+num1, num2 = map(int, input().split())
 
-a_x = (a-1) % 4
-a_y = (a-1) // 4
+# num1의 위치 구하기
+# row(행): 위에서 몇 번째 줄인가? (나머지 연산)
+row1 = (num1 - 1) % 4
+# col(열): 왼쪽에서 몇 번째 칸인가? (몫 연산)
+col1 = (num1 - 1) // 4
 
-b_x = (b-1) % 4
-b_y = (b-1) // 4
+# num2의 위치 구하기
+row2 = (num2 - 1) % 4
+col2 = (num2 - 1) // 4
 
-distance = abs((a_x - b_x)) + abs((a_y - b_y))
+# 거리 계산 (행 차이 + 열 차이)
+# 가로 거리(열 차이) + 세로 거리(행 차이)
+distance = abs(row1 - row2) + abs(col1 - col2)
 
 print(distance)
 
