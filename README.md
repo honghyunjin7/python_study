@@ -183,24 +183,20 @@ print(round)
 
 #17
 
-blocks = int(input())
+n = int(input())
 
-height = 1
-total_blocks = 1
-added_last_layer = 1  # A(1) = 1
+height = 0
+total_blocks = 0
+current_layer = 1
+i = 1
 
-while True:
-    # A(h) 점화식 = A(h-1) + 4 * (h-1)
-    # A(height + 1) = A(height) + 4 * height
-    added_this_layer = added_last_layer + 4 * height
+while total_blocks + current_layer <= n:
+    total_blocks += current_layer
+    height += 1
     
-    if total_blocks + added_this_layer > blocks:
-        break
-
-    total_blocks = total_blocks + added_this_layer
-    added_last_layer = added_this_layer  # 다음 루프를 위해 현재 층의 블록 수 저장
-    height = height + 1
-
+    current_layer += 4 * i
+    i += 1
+    
 print(height)
 
 -Arrays-
